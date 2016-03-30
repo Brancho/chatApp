@@ -1,23 +1,12 @@
 window.onload = function() {
 
 	var messages = [];
-	var fs = require('../index.js').fs;
 	var socket = io.connect('http://'+location.host);
 	var field = document.getElementById("field");
 	var sendButton = document.getElementById("send");
 	var content = document.getElementById("content");
 	var name = document.getElementById("name");
 	var file = document.getElementById("file");
-
-	file.onchange = function(e) {
-		fs.readFile(file, function (err, data) {
-		   if (err) {
-		       return console.error(err);
-		   }
-		   console.log("Asynchronous read: " + data.toString());
-		});
-	};
-
 
 
 	socket.on('message', function (data) {
