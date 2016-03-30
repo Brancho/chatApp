@@ -1,0 +1,21 @@
+doctype
+html
+	head
+		title= "MyChatApp"
+		script(src='/chat.js')
+		script(src='/socket.io/socket.io.js')
+		style
+		include page.css
+	body
+		#chat
+			#content
+			.controls
+				hr
+				br
+				input#name(placeholder="What's your name?")
+				br
+				textarea#field(placeholder='Say something...', rows='4',cols='50')
+				input#file(type='file', value='add file')
+				br
+				br
+				input#send(type='button', value='SEND')
